@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Total — Stock Autonomy & Virtual Flow</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .shell {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .separator {
+        flex: 0 0 8px;
+        background: #0d2847;
+      }
+
+      iframe {
+        flex: 1 1 50%;
+        min-width: 0;
+        width: 50%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <iframe src="/stock-autonomy" title="Stock Autonomy dashboard"></iframe>
+      <div class="separator" aria-hidden="true"></div>
+      <iframe src="/virtual-flow" title="Virtual Flow dashboard"></iframe>
+    </div>
+  </body>
+</html>
