@@ -1,13 +1,13 @@
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export const CONFIG = {
-  WORKSHOP_TITLE: 'Virtual Flow',
+  WORKSHOP_TITLE: 'Virtual Flow Metering',
   WORKSHOP_SUBTITLE: 'Probabl × Total Energies · Skore skills lab',
   REPO_SLUG: 'probabl-ai/total-workshop',
   POLL_INTERVAL_MS: 3000,
   COUNTDOWN_SEC: 1800,
-  SCORE_LABEL: 'MAE',
-  PRIMARY_SCORE: 'mae' as const,
+  SCORE_LABEL: 'RMSE',
+  PRIMARY_SCORE: 'rmse' as const,
   SCORE_HIGHER_IS_BETTER: false,
   FEED_VISIBLE: 14,
   SPARKLINE_POINTS: 10,
