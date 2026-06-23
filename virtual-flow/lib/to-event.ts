@@ -36,7 +36,7 @@ export function toEvent(report: NormalizedReport, project: SkoreProject): PushEv
 
 export function formatScore(score: number | null): string {
   if (score == null) return '—';
-  if (CONFIG.PRIMARY_SCORE === 'mae' || CONFIG.PRIMARY_SCORE === 'rmse') return score.toFixed(4);
+  if (CONFIG.PRIMARY_SCORE === 'rmse') return score.toFixed(4);
   return CONFIG.SCORE_HIGHER_IS_BETTER && score <= 1
     ? score.toFixed(4)
     : score.toFixed(2);

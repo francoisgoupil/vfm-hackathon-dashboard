@@ -62,8 +62,6 @@ export function scoreFromKey(key: string | null | undefined): number | null {
   if (rmseMatch) return Number(rmseMatch[1]);
   const maeMatch = String(key).match(/@mae=([0-9]+(?:\.[0-9]+)?)/i);
   if (maeMatch) return Number(maeMatch[1]);
-  const rmseMatch = String(key).match(/@rmse=([0-9]+(?:\.[0-9]+)?)/i);
-  if (rmseMatch) return Number(rmseMatch[1]);
   const aucMatch = String(key).match(/@roc[_-]?auc=([0-9]+(?:\.[0-9]+)?)/i);
   if (aucMatch) return Number(aucMatch[1]);
   return null;
@@ -88,16 +86,6 @@ export function resolvePrimaryScore(
     const mae = metrics.mae_mean ?? metrics.mae ?? metrics.mean_absolute_error ?? null;
     if (mae != null) return mae;
     if (key && /@mae=/i.test(key)) {
-      const fromKey = scoreFromKey(key);
-      if (fromKey != null) return fromKey;
-    }
-    return null;
-  }
-
-  if (CONFIG.PRIMARY_SCORE === 'rmse') {
-    const rmse = metrics.rmse_mean ?? metrics.rmse ?? metrics.root_mean_squared_error ?? null;
-    if (rmse != null) return rmse;
-    if (key && /@rmse=/i.test(key)) {
       const fromKey = scoreFromKey(key);
       if (fromKey != null) return fromKey;
     }
