@@ -1,2 +1,0 @@
-# Team runners — install in your conda/venv before pushing reports
-skore[hub]>=0.19.0
